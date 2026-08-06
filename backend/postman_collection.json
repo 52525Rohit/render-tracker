@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "Render Time Calculator API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" }
+  ],
+  "item": [
+    {
+      "name": "Get Projects",
+      "request": { "method": "GET", "url": "{{baseUrl}}/getProject" }
+    },
+    {
+      "name": "Create Project",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/createProject",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"projectName\": \"My Project\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Upload Camera",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/upload",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "projectid", "value": "1", "type": "text" },
+            { "key": "cameraName", "value": "Camera A", "type": "text" },
+            { "key": "totalFrame", "value": "100", "type": "text" },
+            { "key": "randerFrame", "value": "10", "type": "text" },
+            { "key": "imageName", "value": "test.gif", "type": "text" },
+            { "key": "imageFile", "type": "file" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Camera Details",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/getCameraDetails",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"projectId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "Get View Details",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/getViewDetails",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Camera",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/update",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "id", "value": "1", "type": "text" },
+            { "key": "cameraName", "value": "Camera A Updated", "type": "text" },
+            { "key": "totalFrame", "value": "200", "type": "text" },
+            { "key": "randerFrame", "value": "20", "type": "text" },
+            { "key": "imageFile", "type": "file" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Camera",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/delete",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1\n}"
+        }
+      }
+    }
+  ]
+}
