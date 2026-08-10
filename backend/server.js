@@ -16,11 +16,24 @@ const localOrigin =
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || localOrigin.test(origin)) return callback(null, true);
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://render-tracker-blush.vercel.app",
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
       callback(new Error("Not allowed by CORS"));
     },
+
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
+
+    allowedHeaders: ["Content-Type", "Authorization"],
+
+    credentials: true,
   }),
 );
 
