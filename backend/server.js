@@ -20,7 +20,7 @@ app.use(
         "http://localhost:5173",
         "http://localhost:3000",
         // "https://render-tracker-blush.vercel.app",
-        //"https://render-tracker.rohitkumarrawani6.workers.dev",
+        "https://render-tracker.rohitkumarrawani6.workers.dev",
       ];
 
       if (!origin || allowedOrigins.includes(origin)) {
