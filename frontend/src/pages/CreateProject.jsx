@@ -39,7 +39,7 @@ function CreateProject({ onCreated }) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-50 text-sky-600">
           <FolderPlus size={18} />
         </div>
         <div>
@@ -60,14 +60,14 @@ function CreateProject({ onCreated }) {
           onChange={(e) => setProjectName(e.target.value)}
           placeholder="e.g. Divine Serenity Renders"
           autoFocus
-          className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+          className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20"
         />
       </div>
 
       <button
         type="submit"
         disabled={submitting}
-        className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
+        className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-sky-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitting ? (
           <>

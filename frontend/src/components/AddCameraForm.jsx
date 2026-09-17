@@ -39,6 +39,11 @@ function AddCameraForm({ projectId, onAdded }) {
       setSubmitting(true);
       const { data } = await uploadCamera(formData);
       if (notifyResult(data)) {
+        setPreview(null);
+        setImage(null);
+        setCameraName("");
+        setTotalFrame("");
+        setRanderFrame("");
         document.getElementById("add_camera_modal")?.close();
         onAdded?.();
       }
@@ -53,7 +58,7 @@ function AddCameraForm({ projectId, onAdded }) {
     <form onSubmit={handleSubmit} className="space-y-5">
       {/* Header */}
       <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-50 text-sky-600">
           <Camera size={18} />
         </div>
         <div>
@@ -67,7 +72,7 @@ function AddCameraForm({ projectId, onAdded }) {
       {/* Image upload */}
       <label
         htmlFor="camera-image-input"
-        className="group relative flex cursor-pointer flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 p-4 transition-colors hover:border-indigo-300 hover:bg-indigo-50/40"
+        className="group relative flex cursor-pointer flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 p-4 transition-colors hover:border-sky-300 hover:bg-sky-50/40"
       >
         {preview ? (
           <img
@@ -76,7 +81,7 @@ function AddCameraForm({ projectId, onAdded }) {
             className="h-40 w-full rounded-lg object-cover"
           />
         ) : (
-          <div className="flex h-40 w-full flex-col items-center justify-center gap-2 text-gray-400 group-hover:text-indigo-500">
+          <div className="flex h-40 w-full flex-col items-center justify-center gap-2 text-gray-400 group-hover:text-sky-500">
             <ImagePlus size={28} strokeWidth={1.5} />
             <span className="text-xs font-medium">
               Click to upload camera image
@@ -111,7 +116,7 @@ function AddCameraForm({ projectId, onAdded }) {
           value={cameraName}
           onChange={(e) => setCameraName(e.target.value)}
           placeholder="e.g. Front Entrance Cam"
-          className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+          className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20"
         />
       </div>
 
@@ -128,7 +133,7 @@ function AddCameraForm({ projectId, onAdded }) {
             value={totalFrame}
             onChange={(e) => setTotalFrame(e.target.value)}
             placeholder="0"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20"
           />
         </div>
         <div>
@@ -142,7 +147,7 @@ function AddCameraForm({ projectId, onAdded }) {
             value={randerFrame}
             onChange={(e) => setRanderFrame(e.target.value)}
             placeholder="0"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20"
           />
         </div>
       </div>
@@ -151,7 +156,7 @@ function AddCameraForm({ projectId, onAdded }) {
       <button
         type="submit"
         disabled={submitting}
-        className="flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-sky-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {submitting ? (
           <>

@@ -129,7 +129,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                   <X className="text-2xl" />
                 </button>
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/30">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-500/30">
                     <Save className="text-2xl" />
                   </div>
                   <div>
@@ -145,17 +145,17 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
 
               {/* Content */}
               <div className="p-6">
-                <div className="rounded-2xl bg-indigo-50 border border-indigo-200/50 p-4">
+                <div className="rounded-2xl bg-sky-50 border border-sky-200/50 p-4">
                   <div className="flex items-start gap-3">
-                    <Edit3 className="text-indigo-500 text-xl mt-0.5 flex-shrink-0" />
+                    <Edit3 className="text-sky-500 text-xl mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-sm font-medium text-indigo-800">
+                      <p className="text-sm font-medium text-sky-800">
                         Are you sure you want to update
                       </p>
-                      <p className="text-base font-bold text-indigo-900 mt-0.5">
+                      <p className="text-base font-bold text-sky-900 mt-0.5">
                         "{cameraName || "this camera"}"?
                       </p>
-                      <p className="text-sm text-indigo-700/70 mt-1">
+                      <p className="text-sm text-sky-700/70 mt-1">
                         Camera settings and frame data will be updated.
                       </p>
                     </div>
@@ -191,7 +191,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                     handleSubmit();
                     closeAlert();
                   }}
-                  className="flex-1 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
+                  className="flex-1 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition-all hover:shadow-sky-500/50 hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
                 >
                   <Save className="text-lg" />
                   Yes, Update
@@ -243,11 +243,11 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
         {/* Modal Header */}
         <div className="flex-none z-30 flex items-center justify-between bg-white/95 backdrop-blur-sm px-6 py-4 border-b border-slate-200/80 rounded-t-3xl">
           <div className="flex items-center gap-2">
-            <Camera size={18} className="text-indigo-600" />
+            <Camera size={18} className="text-sky-600" />
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-600">
               Edit Camera
             </h2>
-            <span className="ml-2 rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-600">
+            <span className="ml-2 rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-medium text-sky-600">
               #{cameraId}
             </span>
           </div>
@@ -281,7 +281,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
             <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
               <div className="relative flex flex-col items-center pt-8 pb-6 px-6">
                 {/* Decorative Background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/50 via-white to-white" />
+                <div className="absolute inset-0 bg-gradient-to-b from-sky-50/50 via-white to-white" />
 
                 {/* Circular Image Upload */}
                 <div className="relative z-10">
@@ -290,13 +290,13 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                     className="group relative cursor-pointer"
                   >
                     <div className="relative">
-                      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 opacity-75 blur-sm transition-all group-hover:opacity-100" />
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-sky-500 to-violet-500 opacity-75 blur-sm transition-all group-hover:opacity-100" />
                       <div className="relative h-32 w-32 rounded-full border-4 border-white shadow-xl overflow-hidden bg-slate-100 transition-all group-hover:scale-105">
                         {loading ? (
                           <div className="flex h-full w-full items-center justify-center bg-slate-200">
                             <Loader2
                               size={32}
-                              className="animate-spin text-indigo-400"
+                              className="animate-spin text-sky-400"
                             />
                           </div>
                         ) : preview ? (
@@ -313,7 +313,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                             </div>
                           </>
                         ) : (
-                          <div className="flex h-full w-full flex-col items-center justify-center bg-slate-100 text-slate-400 group-hover:bg-indigo-50 group-hover:text-indigo-500">
+                          <div className="flex h-full w-full flex-col items-center justify-center bg-slate-100 text-slate-400 group-hover:bg-sky-50 group-hover:text-sky-500">
                             <ImagePlus size={32} strokeWidth={1.5} />
                             <span className="mt-1 text-xs font-medium">
                               Upload
@@ -385,7 +385,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                         className={`h-full rounded-full transition-all duration-700 ease-out ${
                           isComplete
                             ? "bg-gradient-to-r from-emerald-500 to-teal-400"
-                            : "bg-gradient-to-r from-indigo-600 to-violet-500"
+                            : "bg-gradient-to-r from-sky-600 to-violet-500"
                         }`}
                         style={{ width: `${percent}%` }}
                       />
@@ -404,14 +404,14 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                 {/* Camera Name Input */}
                 <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
                   <div className="flex items-center gap-2 mb-4">
-                    <Edit3 size={16} className="text-indigo-600" />
+                    <Edit3 size={16} className="text-sky-600" />
                     <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500">
                       Camera Information
                     </h3>
                   </div>
                   <div>
                     <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1.5">
-                      <Camera size={16} className="text-indigo-500" />
+                      <Camera size={16} className="text-sky-500" />
                       Camera Name
                     </label>
                     <div className="relative">
@@ -419,7 +419,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                         type="text"
                         value={cameraName}
                         onChange={(e) => setCameraName(e.target.value)}
-                        className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base font-semibold text-gray-900 transition-all focus:border-indigo-400 focus:outline-none focus:ring-4 focus:ring-indigo-100 placeholder:text-gray-400"
+                        className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base font-semibold text-gray-900 transition-all focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-100 placeholder:text-gray-400"
                         placeholder="Enter camera name"
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2">
@@ -432,7 +432,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                 {/* Frame Settings */}
                 <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
                   <div className="flex items-center gap-2 mb-4">
-                    <Film size={16} className="text-indigo-600" />
+                    <Film size={16} className="text-sky-600" />
                     <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500">
                       Frame Settings
                     </h3>
@@ -441,7 +441,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                     {/* Total Frames */}
                     <div>
                       <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1.5">
-                        <Film size={16} className="text-indigo-500" />
+                        <Film size={16} className="text-sky-500" />
                         Total Frames
                       </label>
                       <div className="relative">
@@ -450,7 +450,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                           min="0"
                           value={totalFrame}
                           onChange={(e) => setTotalFrame(e.target.value)}
-                          className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-lg font-semibold text-gray-900 transition-all focus:border-indigo-400 focus:outline-none focus:ring-4 focus:ring-indigo-100 placeholder:text-gray-400"
+                          className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-lg font-semibold text-gray-900 transition-all focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-100 placeholder:text-gray-400"
                           placeholder="Enter total frames"
                         />
                         <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-gray-400">
@@ -497,7 +497,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
 
               {/* Right Column - Quick Preview */}
               <div className="space-y-5">
-                <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-indigo-50/50 to-white p-5 shadow-sm">
+                <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-sky-50/50 to-white p-5 shadow-sm">
                   <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">
                     Quick Preview
                   </h3>
@@ -505,7 +505,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                     <InfoRow
                       label="Camera Name"
                       value={cameraName || "Not set"}
-                      color="text-indigo-600"
+                      color="text-sky-600"
                     />
                     <InfoRow label="Total Frames" value={totalFrame || "0"} />
                     <InfoRow
@@ -548,15 +548,15 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
                     </h3>
                     <ul className="space-y-2 text-xs text-gray-500">
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-indigo-400">•</span>
+                        <span className="mt-0.5 text-sky-400">•</span>
                         Click the camera image to upload a new photo
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-indigo-400">•</span>
+                        <span className="mt-0.5 text-sky-400">•</span>
                         Update frame counts to track progress
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-indigo-400">•</span>
+                        <span className="mt-0.5 text-sky-400">•</span>
                         Changes will be saved after confirmation
                       </li>
                     </ul>
@@ -577,7 +577,7 @@ function EditCameraModal({ isOpen, onClose, cameraId, onSuccess }) {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 px-4 py-3 text-sm font-medium text-white shadow-lg shadow-indigo-600/20 transition-all hover:shadow-indigo-600/30 hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
+                className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-600 to-sky-700 px-4 py-3 text-sm font-medium text-white shadow-lg shadow-sky-600/20 transition-all hover:shadow-sky-600/30 hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
               >
                 {submitting ? (
                   <>

@@ -29,7 +29,7 @@ export const uploadCamera = async (req, res) => {
 
     const { projectid: projectId, cameraName, totalFrame, randerFrame, imageName = "" } = req.body;
 
-    const existing = await Camera.findByName(cameraName);
+    const existing = await Camera.findByName(cameraName, projectId);
     if (existing.length) {
       return res.json({ message: "Data Already Exists", status: 0 });
     }

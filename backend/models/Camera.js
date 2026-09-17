@@ -11,7 +11,8 @@ export const Camera = {
 
   findById: (id) => query("SELECT * FROM camera WHERE id = ?", [id]),
 
-  findByName: (name) => query("SELECT * FROM camera WHERE camera_name = ?", [name]),
+  findByName: (name, projectId) =>
+    query("SELECT * FROM camera WHERE camera_name = ? AND project_id = ?", [name, projectId]),
 
   create: (data) =>
     query(

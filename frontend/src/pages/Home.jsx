@@ -59,14 +59,14 @@ function Home() {
 
   const getProjectColor = (name) => {
     const colors = [
-      "from-blue-500 to-indigo-600",
+      "from-blue-500 to-sky-600",
       "from-purple-500 to-pink-500",
       "from-emerald-500 to-teal-500",
       "from-orange-500 to-red-500",
       "from-cyan-500 to-blue-500",
       "from-rose-500 to-pink-500",
       "from-violet-500 to-purple-500",
-      "from-indigo-500 to-blue-600",
+      "from-sky-500 to-blue-600",
     ];
     const index = name?.length ? name.length % colors.length : 0;
     return colors[index];
@@ -83,36 +83,31 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 relative">
+    <div className="min-h-screen bg-white relative">
       {/* Main Content Wrapper with proper z-index */}
       <div className="relative z-10">
         <div className="mx-auto max-w-7xl space-y-8 p-4 sm:p-8">
           {/* Header Banner */}
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-[#1a103d] to-slate-900 p-8 text-white shadow-2xl shadow-indigo-500/10 border border-indigo-500/10">
-            {/* Animated background elements */}
-            <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl animate-pulse" />
-            <div className="absolute -left-20 -bottom-20 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-1000" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
-
-            {/* Grid pattern overlay */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-100 via-sky-50 to-white p-8 text-slate-900 shadow-sm border border-sky-200">
+            <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-sky-300/30 blur-3xl" />
+            <div className="absolute -left-20 -bottom-20 h-80 w-80 rounded-full bg-sky-200/40 blur-3xl" />
 
             <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-medium text-indigo-200 border border-white/10 shadow-lg">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-medium text-sky-700 border border-sky-200 shadow-sm">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
                   </span>
                   System Online
-                  <span className="w-px h-4 bg-white/20" />
-                  <RiSparklingLine className="text-indigo-300" /> AI Active
+                  <span className="w-px h-4 bg-sky-200" />
+                  <RiSparklingLine className="text-sky-500" /> AI Active
                 </div>
                 <div>
-                  <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent">
+                  <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl text-slate-900">
                     Dashboard
                   </h1>
-                  <p className="mt-2 text-sm text-slate-300 max-w-lg leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 max-w-lg leading-relaxed">
                     Monitor video feeds, track project updates, and manage your
                     connected cameras seamlessly with AI-powered insights.
                   </p>
@@ -124,12 +119,12 @@ function Home() {
                   onClick={() =>
                     document.getElementById("create_project_modal").showModal()
                   }
-                  className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-600/30 transition-all hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-95 hover:from-indigo-400 hover:to-indigo-500"
+                  className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-600/30 transition-all hover:shadow-sky-500/50 hover:scale-[1.02] active:scale-95 hover:from-sky-400 hover:to-sky-500"
                 >
                   <RiAddLine className="text-xl transition-transform group-hover:rotate-90 duration-300" />
                   <span>New Project</span>
                 </button>
-                <button className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-white/10 backdrop-blur-md px-6 py-3.5 text-sm font-semibold text-white border border-white/20 transition-all hover:bg-white/20 hover:scale-[1.02] active:scale-95">
+                <button className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 border border-sky-200 transition-all hover:bg-sky-50 hover:scale-[1.02] active:scale-95">
                   <RiSettings3Line className="text-lg" />
                   <span className="hidden sm:inline">Settings</span>
                 </button>
@@ -140,8 +135,8 @@ function Home() {
           {/* Metric Cards */}
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {/* Card 1 - Total Projects */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg shadow-indigo-500/5 transition-all hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 border border-indigo-100/50">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg shadow-sky-500/5 transition-all hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1 border border-sky-100/50">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="flex items-center justify-between relative">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -154,11 +149,11 @@ function Home() {
                     <RiCheckDoubleLine /> Active workspace
                   </p>
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 transition-transform group-hover:scale-110 group-hover:rotate-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-500/30 transition-transform group-hover:scale-110 group-hover:rotate-6">
                   <RiFolderLine className="text-2xl" />
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-b-2xl scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-sky-600 rounded-b-2xl scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
 
             {/* Card 2 - Cameras */}
@@ -232,15 +227,15 @@ function Home() {
           </div>
 
           {/* Toolbar */}
-          <div className="flex flex-col gap-4 rounded-2xl bg-white/80 backdrop-blur-sm p-4 shadow-lg shadow-indigo-500/5 border border-indigo-100/50 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 rounded-2xl bg-white/80 backdrop-blur-sm p-4 shadow-lg shadow-sky-500/5 border border-sky-100/50 sm:flex-row sm:items-center sm:justify-between">
             <div className="relative flex-1 max-w-md">
-              <RiSearchLine className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg transition-colors group-focus-within:text-indigo-500" />
+              <RiSearchLine className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg transition-colors group-focus-within:text-sky-500" />
               <input
                 type="text"
                 placeholder="Search projects by name..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-12 text-sm text-slate-800 placeholder-slate-400 transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:shadow-lg focus:shadow-indigo-500/5 hover:border-indigo-300"
+                className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-12 text-sm text-slate-800 placeholder-slate-400 transition-all focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 focus:shadow-lg focus:shadow-sky-500/5 hover:border-sky-300"
               />
               <kbd className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 shadow-sm">
                 ⌘K
@@ -279,7 +274,7 @@ function Home() {
                   )
                 }
                 defaultValue=""
-                className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 hover:border-indigo-300 cursor-pointer"
+                className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-all focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 hover:border-sky-300 cursor-pointer"
               >
                 <option value="" disabled>
                   Quick View...
@@ -313,7 +308,7 @@ function Home() {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="rounded-full bg-gradient-to-r from-indigo-50 to-indigo-100/50 px-3 py-1 text-xs font-semibold text-indigo-600 border border-indigo-200/50">
+                <span className="rounded-full bg-gradient-to-r from-sky-50 to-sky-100/50 px-3 py-1 text-xs font-semibold text-sky-600 border border-sky-200/50">
                   {filteredProjects.length} Projects
                 </span>
               </div>
@@ -321,11 +316,11 @@ function Home() {
 
             {/* Loading State */}
             {loading ? (
-              <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-white/80 backdrop-blur-sm border border-indigo-100/50 shadow-lg shadow-indigo-500/5">
+              <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-white/80 backdrop-blur-sm border border-sky-100/50 shadow-lg shadow-sky-500/5">
                 <div className="relative">
-                  <div className="h-16 w-16 rounded-full border-4 border-slate-200 border-t-indigo-600 animate-spin" />
+                  <div className="h-16 w-16 rounded-full border-4 border-slate-200 border-t-sky-600 animate-spin" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 animate-pulse" />
+                    <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-sky-500 to-purple-500 animate-pulse" />
                   </div>
                 </div>
                 <p className="text-sm font-medium text-slate-500 animate-pulse">
@@ -334,11 +329,11 @@ function Home() {
               </div>
             ) : filteredProjects.length === 0 ? (
               /* Empty State */
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-indigo-50/50 border border-indigo-100/50 p-16 text-center shadow-lg shadow-indigo-500/5">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-blue-500/5 to-indigo-500/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-sky-50/50 border border-sky-100/50 p-16 text-center shadow-lg shadow-sky-500/5">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-sky-500/5 to-purple-500/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-blue-500/5 to-sky-500/5 rounded-full translate-y-1/2 -translate-x-1/2" />
                 <div className="relative">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-xl shadow-indigo-500/30 mx-auto mb-6">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-sky-500 to-sky-600 text-white shadow-xl shadow-sky-500/30 mx-auto mb-6">
                     <RiFolderAddLine className="text-4xl" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
@@ -358,7 +353,7 @@ function Home() {
                           .getElementById("create_project_modal")
                           .showModal()
                       }
-                      className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all hover:scale-[1.02] active:scale-95"
+                      className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-all hover:scale-[1.02] active:scale-95"
                     >
                       <RiAddLine className="text-lg" /> Create Project
                     </button>
@@ -381,7 +376,7 @@ function Home() {
                       onClick={() =>
                         goToProject(project.id, project.project_name)
                       }
-                      className="group relative cursor-pointer overflow-hidden rounded-2xl bg-white p-5 shadow-lg shadow-indigo-500/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/15 border border-indigo-100/50 hover:border-indigo-300 flex flex-col"
+                      className="group relative cursor-pointer overflow-hidden rounded-2xl bg-white p-5 shadow-lg shadow-sky-500/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-500/15 border border-sky-100/50 hover:border-sky-300 flex flex-col"
                     >
                       {/* Background gradient accent */}
                       <div
@@ -391,7 +386,7 @@ function Home() {
                       {/* Top section */}
                       <div className="flex items-start justify-between relative">
                         <div
-                          className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${colorGradient} text-white shadow-lg shadow-indigo-500/20 font-bold text-base`}
+                          className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${colorGradient} text-white shadow-lg shadow-sky-500/20 font-bold text-base`}
                         >
                           {initials}
                         </div>
@@ -402,7 +397,7 @@ function Home() {
 
                       {/* Content */}
                       <div className="mt-4 flex-1 relative">
-                        <h3 className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-1">
+                        <h3 className="text-base font-bold text-slate-900 group-hover:text-sky-600 transition-colors line-clamp-1">
                           {project.project_name}
                         </h3>
                         <div className="mt-2 flex items-center gap-3 text-xs text-slate-400">
@@ -428,9 +423,9 @@ function Home() {
                       </div>
 
                       {/* Bottom action */}
-                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-indigo-600 group-hover:text-indigo-700">
+                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-sky-600 group-hover:text-sky-700">
                         <span>View Details</span>
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 group-hover:bg-indigo-100 transition-colors">
+                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-50 group-hover:bg-sky-100 transition-colors">
                           <RiArrowRightLine className="text-sm transition-transform duration-300 group-hover:translate-x-0.5" />
                         </div>
                       </div>

@@ -168,7 +168,7 @@ function CameraDetailsModal({ isOpen, onClose, cameraId }) {
         {/* Modal Header - Fixed */}
         <div className="flex-none z-30 flex items-center justify-between bg-white/95 backdrop-blur-sm px-6 py-4 border-b border-slate-200/80 rounded-t-3xl">
           <div className="flex items-center gap-2">
-            <CameraIcon size={18} className="text-indigo-600" />
+            <CameraIcon size={18} className="text-sky-600" />
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-600">
               Camera Details
             </h2>
@@ -200,12 +200,12 @@ function CameraDetailsModal({ isOpen, onClose, cameraId }) {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-md">
                 <div className="relative flex flex-col items-center pt-8 pb-6 px-6">
                   {/* Decorative Background */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/50 via-white to-white" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-sky-50/50 via-white to-white" />
 
                   {/* Circular Image */}
                   <div className="relative z-10">
                     <div className="relative">
-                      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 opacity-75 blur-sm" />
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-sky-500 to-violet-500 opacity-75 blur-sm" />
                       <div className="relative h-36 w-36 rounded-full border-4 border-white shadow-xl overflow-hidden bg-slate-100">
                         {camera.image_url ? (
                           <img
@@ -242,7 +242,7 @@ function CameraDetailsModal({ isOpen, onClose, cameraId }) {
 
                   {/* Camera Info */}
                   <div className="mt-6 text-center z-10">
-                    <div className="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-1">
+                    <div className="flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-sky-600 mb-1">
                       <CameraIcon size={14} />
                       <span>Camera View</span>
                     </div>
@@ -272,7 +272,7 @@ function CameraDetailsModal({ isOpen, onClose, cameraId }) {
                         className={`h-full rounded-full transition-all duration-700 ease-out ${
                           isComplete
                             ? "bg-gradient-to-r from-emerald-500 to-teal-400"
-                            : "bg-gradient-to-r from-indigo-600 to-violet-500"
+                            : "bg-gradient-to-r from-sky-600 to-violet-500"
                         }`}
                         style={{ width: `${percent}%` }}
                       />
@@ -340,7 +340,7 @@ function CameraDetailsModal({ isOpen, onClose, cameraId }) {
             <div className="lg:col-span-2">
               <div className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm h-full">
                 <div className="flex items-center gap-2 mb-4">
-                  <Activity size={18} className="text-indigo-600" />
+                  <Activity size={18} className="text-sky-600" />
                   <h2 className="text-sm font-bold uppercase tracking-wider text-slate-600">
                     Camera Details
                   </h2>

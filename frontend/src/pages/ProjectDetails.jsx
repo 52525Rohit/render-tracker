@@ -253,25 +253,25 @@ function ProjectDetails() {
       : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50/30 p-4 sm:p-8">
       <div className="mx-auto max-w-7xl space-y-6">
         {/* Back Navigation */}
         <button
           onClick={() => navigate(-1)}
-          className="group inline-flex items-center gap-2 rounded-xl bg-white/80 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-slate-600 shadow-sm border border-slate-200/60 transition-all hover:bg-white hover:text-indigo-600 hover:shadow-md hover:border-indigo-200"
+          className="group inline-flex items-center gap-2 rounded-xl bg-white/80 backdrop-blur-sm px-4 py-2.5 text-sm font-medium text-slate-600 shadow-sm border border-slate-200/60 transition-all hover:bg-white hover:text-sky-600 hover:shadow-md hover:border-sky-200"
         >
           <RiArrowLeftLine className="transition-transform group-hover:-translate-x-1" />
           Back to Dashboard
         </button>
 
         {/* Header Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-[#1a103d] to-slate-900 p-6 sm:p-8 text-white shadow-2xl shadow-indigo-500/10 border border-indigo-500/10">
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl animate-pulse" />
-          <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-1000" />
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-100 via-sky-50 to-white p-6 sm:p-8 text-slate-900 shadow-sm border border-sky-200">
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl" />
+          <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-sky-200/40 blur-3xl" />
 
           <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-xs font-medium text-indigo-200 border border-white/10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-sky-700 border border-sky-200 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
@@ -279,10 +279,10 @@ function ProjectDetails() {
                 Project #{project || "N/A"}
               </div>
               <div>
-                <h1 className="text-2xl font-extrabold tracking-tight sm:text-4xl bg-gradient-to-r from-white via-indigo-200 to-white bg-clip-text text-transparent">
+                <h1 className="text-2xl font-extrabold tracking-tight sm:text-4xl text-slate-900">
                   {projectName || "Project Details"}
                 </h1>
-                <p className="mt-1 text-sm text-slate-300">
+                <p className="mt-1 text-sm text-slate-600">
                   Manage cameras and track rendering progress in real-time
                 </p>
               </div>
@@ -292,7 +292,7 @@ function ProjectDetails() {
               onClick={() =>
                 document.getElementById("add_camera_modal").showModal()
               }
-              className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/30 transition-all hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-95"
+              className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-600/30 transition-all hover:shadow-sky-500/50 hover:scale-[1.02] active:scale-95"
             >
               <RiAddLine className="text-xl transition-transform group-hover:rotate-90 duration-300" />
               <span>Add Camera</span>
@@ -316,8 +316,8 @@ function ProjectDetails() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg shadow-indigo-500/5 transition-all hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 border border-indigo-100/50">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg shadow-sky-500/5 transition-all hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1 border border-sky-100/50">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="flex items-center justify-between relative">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -327,7 +327,7 @@ function ProjectDetails() {
                   {loading ? "—" : cameras.length}
                 </p>
               </div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 text-white shadow-lg shadow-sky-500/30 transition-transform group-hover:scale-110">
                 <RiCameraLine className="text-2xl" />
               </div>
             </div>
@@ -387,7 +387,7 @@ function ProjectDetails() {
         </div>
 
         {/* Main Table Card */}
-        <div className="overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-lg shadow-indigo-500/5">
+        <div className="overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm border border-slate-200/60 shadow-lg shadow-sky-500/5">
           {/* Toolbar */}
           <div className="border-b border-slate-200/60 bg-gradient-to-r from-slate-50/50 to-white p-4 sm:p-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -398,7 +398,7 @@ function ProjectDetails() {
                   placeholder="Search cameras..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-800 placeholder-slate-400 transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 hover:border-indigo-300"
+                  className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-800 placeholder-slate-400 transition-all focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 hover:border-sky-300"
                 />
               </div>
 
@@ -410,7 +410,7 @@ function ProjectDetails() {
                   ref={unitRef}
                   value={unit}
                   onChange={(e) => setUnit(e.target.value)}
-                  className="cursor-pointer rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-all focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 hover:border-indigo-300"
+                  className="cursor-pointer rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-all focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 hover:border-sky-300"
                 >
                   <option value="seconds">Seconds</option>
                   <option value="minutes">Minutes</option>
@@ -424,9 +424,9 @@ function ProjectDetails() {
           {loading ? (
             <div className="flex h-72 flex-col items-center justify-center gap-4">
               <div className="relative">
-                <div className="h-16 w-16 rounded-full border-4 border-slate-200 border-t-indigo-600 animate-spin" />
+                <div className="h-16 w-16 rounded-full border-4 border-slate-200 border-t-sky-600 animate-spin" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 animate-pulse" />
+                  <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-sky-500 to-purple-500 animate-pulse" />
                 </div>
               </div>
               <p className="text-sm font-medium text-slate-500 animate-pulse">
@@ -435,7 +435,7 @@ function ProjectDetails() {
             </div>
           ) : filteredRows.length === 0 ? (
             <div className="flex flex-col items-center justify-center px-4 py-16 text-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-50 to-indigo-100/50 text-indigo-600 mb-4">
+              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-sky-50 to-sky-100/50 text-sky-600 mb-4">
                 <RiCameraLine className="text-4xl" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">
@@ -453,7 +453,7 @@ function ProjectDetails() {
                   onClick={() =>
                     document.getElementById("add_camera_modal").showModal()
                   }
-                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all hover:scale-[1.02] active:scale-95"
+                  className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-all hover:scale-[1.02] active:scale-95"
                 >
                   <RiAddLine className="text-lg" /> Add Camera
                 </button>
@@ -481,11 +481,11 @@ function ProjectDetails() {
                       return (
                         <tr
                           key={camera.id}
-                          className="group transition-all hover:bg-indigo-50/30 hover:shadow-sm"
+                          className="group transition-all hover:bg-sky-50/30 hover:shadow-sm"
                         >
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-3">
-                              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-50 transition-all group-hover:border-indigo-300 group-hover:shadow-md">
+                              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-50 transition-all group-hover:border-sky-300 group-hover:shadow-md">
                                 {camera.image_url ? (
                                   <img
                                     className="h-full w-full object-cover"
@@ -502,7 +502,7 @@ function ProjectDetails() {
                                 )}
                               </div>
                               <div>
-                                <div className="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                                <div className="font-semibold text-slate-900 group-hover:text-sky-600 transition-colors">
                                   {camera.camera_name}
                                 </div>
                                 <div className="text-xs text-slate-400">
@@ -548,7 +548,7 @@ function ProjectDetails() {
                             <div className="flex items-center justify-end gap-1">
                               <button
                                 onClick={() => openViewModal(camera.id)}
-                                className="group/btn inline-flex h-9 w-9 items-center justify-center rounded-xl text-slate-400 transition-all hover:bg-indigo-50 hover:text-indigo-600 hover:shadow-sm"
+                                className="group/btn inline-flex h-9 w-9 items-center justify-center rounded-xl text-slate-400 transition-all hover:bg-sky-50 hover:text-sky-600 hover:shadow-sm"
                                 title="View Details"
                               >
                                 <RiEyeLine className="text-base transition-transform group-hover/btn:scale-110" />
@@ -588,7 +588,7 @@ function ProjectDetails() {
                 {searchTerm && (
                   <button
                     onClick={() => setSearchTerm("")}
-                    className="font-semibold text-indigo-600 transition-all hover:text-indigo-700 hover:underline flex items-center gap-1"
+                    className="font-semibold text-sky-600 transition-all hover:text-sky-700 hover:underline flex items-center gap-1"
                   >
                     <RiCloseCircleLine className="text-sm" />
                     Clear search
