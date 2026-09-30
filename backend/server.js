@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import "./config/db.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import cameraRoutes from "./routes/cameraRoutes.js";
+import { query } from "./config/db.js";
 
 const dirName = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -45,6 +46,23 @@ app.use("/uploads", express.static(path.join(dirName, "uploads")));
 app.get("/", (req, res) => {
   res.send("Api Running Successfully");
 });
+
+app.get("/db-status", async (req, res) => {
+  try {
+    await query("SELECT 1");
+    res.status(200).json({
+      status: "success",
+      message: "Database is connected and active!",
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "error",
+      message: "Database connection failed",
+      error: error.message,
+    });
+  }
+});
+
 app.use(projectRoutes);
 app.use(cameraRoutes);
 

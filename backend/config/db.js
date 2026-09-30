@@ -34,17 +34,19 @@
 //   return rows;
 // };
 
-import mysql from "mysql2/promise";
 import dotenv from "dotenv";
+import mysql from "mysql2/promise";
 
 dotenv.config();
 
+console.log("Connecting to Host:", process.env.DB_HOST);
+
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT || 23437,
+  port: Number(process.env.DB_PORT) || 23437,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  database: process.env.DB_NAME || "defaultdb",
   ssl: {
     rejectUnauthorized: false,
   },
@@ -53,16 +55,21 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-async function testConnection() {
+async function checkDbConnection() {
   try {
     const connection = await pool.getConnection();
-    console.log("Connected to Aiven MySQL database successfully!");
+    console.log("Successfully connected to Aiven MySQL DB!");
     connection.release();
   } catch (error) {
-    console.error("Database connection failed:", error.message);
+    console.error("DB Connection Failed full details:", error);
   }
 }
 
-testConnection();
+checkDbConnection();
+
+export const query = async (sql, params) => {
+  const [results] = await pool.query(sql, params);
+  return results;
+};
 
 export default pool;
