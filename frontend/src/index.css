@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* dialog open ho to global toaster hide (visibility, display:none nahi — warna toast height 0 ho jaati hai) */
+body:has(dialog[open]) .global-toaster {
+  visibility: hidden;
+}

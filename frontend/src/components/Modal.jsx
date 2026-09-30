@@ -1,8 +1,22 @@
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
+import { Toaster } from "react-hot-toast";
 
 function Modal({ id, title, children }) {
+  const ref = useRef(null);
+  const [open, setOpen] = useState(false);
+
+  // showModal() bahar se call hota hai, isliye `open` attribute observe karte hain
+  useEffect(() => {
+    const el = ref.current;
+    const obs = new MutationObserver(() => setOpen(el.open));
+    obs.observe(el, { attributes: true, attributeFilter: ["open"] });
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <dialog
+      ref={ref}
       id={id}
       className="m-auto w-full max-w-lg rounded-2xl border border-gray-100 p-0 shadow-2xl backdrop:bg-gray-900/60 backdrop:backdrop-blur-sm"
     >
@@ -23,6 +37,9 @@ function Modal({ id, title, children }) {
         )}
         {children}
       </div>
+      {/* dialog top layer mein hota hai, isliye open hone par toasts yahin render hote hain.
+          Sirf open par mount — band dialog (display:none) toast height 0 kar deta hai aur toast chhup jaata hai */}
+      {open && <Toaster />}
     </dialog>
   );
 }
